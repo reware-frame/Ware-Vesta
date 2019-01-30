@@ -7,6 +7,9 @@ import org.slf4j.LoggerFactory;
 
 import java.util.Date;
 
+/**
+ * 时间计算
+ */
 public class SimpleTimer implements Timer {
     protected static final Logger log = LoggerFactory.getLogger(SimpleTimer.class);
     protected IdMeta idMeta;

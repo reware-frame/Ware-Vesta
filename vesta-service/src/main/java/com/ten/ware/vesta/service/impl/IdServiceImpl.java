@@ -37,8 +37,11 @@ public class IdServiceImpl extends AbstractIdServiceImpl {
         initPopulator();
     }
 
+    /**
+     * 代理模式：代理到IdPopulator接口的一个实现来计算
+     */
     public void initPopulator() {
-        if (idPopulator != null){
+        if (idPopulator != null) {
             log.info("The " + idPopulator.getClass().getCanonicalName() + " is used.");
         } else if (CommonUtils.isPropKeyOn(SYNC_LOCK_IMPL_KEY)) {
             log.info("The SyncIdPopulator is used.");
