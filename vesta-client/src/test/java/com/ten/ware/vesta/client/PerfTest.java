@@ -4,6 +4,9 @@ import com.ten.ware.vesta.service.intf.IdService;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+/**
+ * 压测
+ */
 public class PerfTest {
 
     public static void main(String[] args) throws InterruptedException {
@@ -36,12 +39,12 @@ public class PerfTest {
 
         long lastMilis = System.currentTimeMillis();
 
-        for (int i = 0; i < threads.length; i++) {
-            threads[i].start();
+        for (Thread thread : threads) {
+            thread.start();
         }
 
-        for (int i = 0; i < threads.length; i++) {
-            threads[i].join();
+        for (Thread thread : threads) {
+            thread.join();
         }
 
         System.out

@@ -1,5 +1,8 @@
 package com.ten.ware.vesta.service.impl.bean;
 
+/**
+ * ID中间数据
+ */
 public class IdMeta {
 
     private byte machineBits;

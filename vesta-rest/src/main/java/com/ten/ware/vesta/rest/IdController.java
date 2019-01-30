@@ -47,10 +47,10 @@ public class IdController {
             @RequestParam(value = "seq", defaultValue = "-1") long seq) {
 
         long madeId = -1;
-        if (time == -1 || seq == -1)
+        if (time == -1 || seq == -1) {
             throw new IllegalArgumentException(
                     "Both time and seq are required.");
-        else if (version == -1) {
+        } else if (version == -1) {
             if (type == -1) {
                 if (genMethod == -1) {
                     if (machine == -1) {

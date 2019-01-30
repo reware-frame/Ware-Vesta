@@ -1,6 +1,9 @@
 package com.ten.ware.vesta.service.impl.bean;
 
 public enum IdType {
+    /**
+     * 最高峰值型、最小粒度型
+     */
     SECONDS("seconds"), MILLISECONDS("milliseconds"), SHORTID("short_id");
 
     private String name;
@@ -9,6 +12,9 @@ public enum IdType {
         this.name = name;
     }
 
+    /**
+     * 映射为整数
+     */
     public long value() {
         switch (this) {
             case SECONDS:
@@ -44,8 +50,7 @@ public enum IdType {
             return MILLISECONDS;
         } else if (type == 0) {
             return SECONDS;
-        }
-        else if(type==2){
+        } else if (type == 2) {
             return SHORTID;
         }
 

@@ -16,6 +16,9 @@ import org.apache.commons.lang.StringUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
+/**
+ * rest服务 netty实现
+ */
 public class VestaRestNettyServer {
     private static final Log log = LogFactory
             .getLog(VestaRestNettyServer.class);
@@ -37,10 +40,11 @@ public class VestaRestNettyServer {
                     .channel(NioServerSocketChannel.class)
                     .childHandler(new com.ten.ware.vesta.rest.netty.VestaRestNettyServerInitializer());
 
-            Channel ch = b.bind(new InetSocketAddress("0.0.0.0",port)).sync().channel();
+            Channel ch = b.bind(new InetSocketAddress("0.0.0.0", port)).sync().channel();
 
-            if (log.isDebugEnabled())
+            if (log.isDebugEnabled()) {
                 log.debug("VestaRestNettyServer is started.");
+            }
 
             ch.closeFuture().sync();
         } finally {
@@ -51,6 +55,7 @@ public class VestaRestNettyServer {
 
     /**
      * 加载配置文件
+     *
      * @return
      * @throws IOException
      */
@@ -59,16 +64,19 @@ public class VestaRestNettyServer {
                 .getResourceAsStream("spring/vesta-rest-netty.properties");
 //        new FileInputStream(new File(System.getProperty("user.dir")+File.separator+""))
         System.out.println(System.getProperty("user.dir"));
-        Properties properties=new Properties();
+        Properties properties = new Properties();
         properties.load(resourceAsStream);
         return properties;
     }
 
+    /**
+     * 启动
+     */
     public static void main(String[] args) throws Exception {
-        Properties properties=loadConf();
-        String portStr=properties.getProperty("vesta.port");
-        int port=8080;
-        if(!StringUtils.isBlank(portStr)&&StringUtils.isNumeric(portStr)){
+        Properties properties = loadConf();
+        String portStr = properties.getProperty("vesta.port");
+        int port = 8080;
+        if (!StringUtils.isBlank(portStr) && StringUtils.isNumeric(portStr)) {
             port = Integer.valueOf(portStr);
         }
         if (args.length > 0) {

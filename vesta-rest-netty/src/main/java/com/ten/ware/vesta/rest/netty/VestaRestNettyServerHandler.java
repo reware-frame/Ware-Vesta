@@ -12,7 +12,9 @@ import io.netty.handler.codec.http.FullHttpResponse;
 import io.netty.handler.codec.http.HttpHeaders.Values;
 import io.netty.handler.codec.http.HttpRequest;
 import io.netty.handler.codec.http.QueryStringDecoder;
+
 import java.text.SimpleDateFormat;
+
 import net.sf.json.JSONObject;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -71,8 +73,9 @@ public class VestaRestNettyServerHandler extends ChannelHandlerAdapter {
     @Override
     public void channelRead(ChannelHandlerContext ctx, Object msg)
             throws Exception {
-        if (!(msg instanceof HttpRequest))
+        if (!(msg instanceof HttpRequest)) {
             return;
+        }
 
         HttpRequest req = (HttpRequest) msg;
 
@@ -82,8 +85,9 @@ public class VestaRestNettyServerHandler extends ChannelHandlerAdapter {
 
         URI uri = new URI(req.getUri());
 
-        if (log.isDebugEnabled())
+        if (log.isDebugEnabled()) {
             log.debug("request uri==" + uri.getPath());
+        }
 
         long id = -1;
         long time = -1;
@@ -95,11 +99,13 @@ public class VestaRestNettyServerHandler extends ChannelHandlerAdapter {
 
         QueryStringDecoder decoderQuery = new QueryStringDecoder(req.getUri());
         Map<String, List<String>> uriAttributes = decoderQuery.parameters();
+
         for (Entry<String, List<String>> attr : uriAttributes.entrySet()) {
             for (String attrVal : attr.getValue()) {
-                if (log.isDebugEnabled())
+                if (log.isDebugEnabled()) {
                     log.debug("Request Parameter: " + attr.getKey() + '='
                             + attrVal);
+                }
 
                 if (ID.equals(attr.getKey())) {
                     id = Long.parseLong(attrVal);
@@ -124,15 +130,17 @@ public class VestaRestNettyServerHandler extends ChannelHandlerAdapter {
         if (ACTION_GENID.equals(uri.getPath())) {
             long idl = idService.genId();
 
-            if (log.isTraceEnabled())
+            if (log.isTraceEnabled()) {
                 log.trace("Generated id: " + idl);
+            }
 
             sbContent.append(idl);
         } else if (ACTION_EXPID.equals(uri.getPath())) {
             Id ido = idService.expId(id);
 
-            if (log.isTraceEnabled())
+            if (log.isTraceEnabled()) {
                 log.trace("Explained id: " + ido);
+            }
 
             JSONObject jo = JSONObject.fromObject(ido);
 
@@ -140,9 +148,10 @@ public class VestaRestNettyServerHandler extends ChannelHandlerAdapter {
         } else if (ACTION_TRANSTIME.equals(uri.getPath())) {
             Date date = idService.transTime(time);
 
-            if (log.isTraceEnabled())
+            if (log.isTraceEnabled()) {
                 log.trace("Time: " + date);
-            SimpleDateFormat simpleDateFormat=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS");
+            }
+            SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS");
             sbContent.append(simpleDateFormat.format(date));
         } else if (ACTION_MAKEID.equals(uri.getPath())) {
             long madeId = -1;

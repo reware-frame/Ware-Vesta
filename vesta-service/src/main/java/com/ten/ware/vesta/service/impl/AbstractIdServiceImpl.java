@@ -15,6 +15,9 @@ import org.slf4j.LoggerFactory;
 
 import java.util.Date;
 
+/**
+ * 抽象基类，适合任何场景下都不变的逻辑
+ */
 public abstract class AbstractIdServiceImpl implements IdService {
 
     protected final Logger log = LoggerFactory.getLogger(this.getClass());
@@ -72,6 +75,7 @@ public abstract class AbstractIdServiceImpl implements IdService {
         id.setType(idType.value());
         id.setVersion(version);
 
+        // 模板回调函数
         populateId(id);
 
         long ret = idConverter.convert(id, this.idMeta);
@@ -83,7 +87,7 @@ public abstract class AbstractIdServiceImpl implements IdService {
         return ret;
     }
 
-    public void validateMachineId(long machineId){
+    public void validateMachineId(long machineId) {
         if (machineId < 0) {
             log.error("The machine ID is not configured properly (" + machineId + " < 0) so that Vesta Service refuses to start.");
 
@@ -100,6 +104,9 @@ public abstract class AbstractIdServiceImpl implements IdService {
         }
     }
 
+    /**
+     * 模板回调函数
+     */
     protected abstract void populateId(Id id);
 
     public Date transTime(final long time) {

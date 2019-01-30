@@ -7,6 +7,9 @@ import io.netty.handler.codec.http.HttpServerCodec;
 
 public class VestaRestNettyServerInitializer extends
         ChannelInitializer<SocketChannel> {
+    /**
+     * handler
+     */
     private com.ten.ware.vesta.rest.netty.VestaRestNettyServerHandler handler = new com.ten.ware.vesta.rest.netty.VestaRestNettyServerHandler();
 
     @Override

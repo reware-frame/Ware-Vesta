@@ -6,7 +6,6 @@ import com.ten.ware.vesta.service.impl.populater.AtomicIdPopulator;
 import com.ten.ware.vesta.service.impl.populater.IdPopulator;
 import com.ten.ware.vesta.service.impl.populater.LockIdPopulator;
 import com.ten.ware.vesta.service.impl.populater.SyncIdPopulator;
-import com.ten.ware.vesta.util.CommonUtils;
 
 public class IdServiceImpl extends AbstractIdServiceImpl {
 
@@ -53,6 +52,7 @@ public class IdServiceImpl extends AbstractIdServiceImpl {
         }
     }
 
+    @Override
     protected void populateId(Id id) {
         idPopulator.populateId(timer, id, idMeta);
     }
