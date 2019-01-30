@@ -4,16 +4,14 @@
         xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <groupId>com.robert.vesta</groupId>
-        <artifactId>vesta-id-generator</artifactId>
+        <groupId>com.ten.ware</groupId>
+        <artifactId>vesta</artifactId>
         <version>0.0.1</version>
     </parent>
 
-    <groupId>com.robert.vesta</groupId>
     <artifactId>vesta-service</artifactId>
     <version>0.0.1</version>
     <name>vesta-service</name>
-
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -42,9 +40,8 @@
         </dependency>
 
         <dependency>
-            <groupId>com.robert.vesta</groupId>
+            <groupId>com.ten.ware.vesta</groupId>
             <artifactId>vesta-intf</artifactId>
-            <version>0.0.1</version>
         </dependency>
 
         <dependency>
@@ -71,7 +68,6 @@
             <version>1.4</version>
         </dependency>
 
-
         <dependency>
             <groupId>c3p0</groupId>
             <artifactId>c3p0</artifactId>
@@ -85,12 +81,6 @@
         </dependency>
 
         <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-api</artifactId>
-            <version>1.7.12</version>
-        </dependency>
-
-        <dependency>
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-classic</artifactId>
             <version>1.0.13</version>
@@ -100,6 +90,18 @@
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-core</artifactId>
             <version>1.0.13</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>1.7.24</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.ten.ware</groupId>
+            <artifactId>vesta-intf</artifactId>
+            <version>0.0.1</version>
         </dependency>
 
     </dependencies>

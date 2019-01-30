@@ -11,7 +11,7 @@
 
     <dubbo:protocol name="dubbo" port="${vesta.service.port}"/>
 
-    <bean id="idService" class="com.robert.vesta.service.factory.IdServiceFactoryBean"
+    <bean id="idService" class="com.ten.ware.vesta.service.factory.IdServiceFactoryBean"
           init-method="init">
         <property name="providerType" value="PROPERTY"/>
 
@@ -19,7 +19,7 @@
         <property name="machineId" value="${vesta.machine}"/>
     </bean>
 
-    <dubbo:service interface="com.robert.vesta.service.intf.IdService"
+    <dubbo:service interface="com.ten.ware.vesta.service.intf.IdService"
                    ref="idService"/>
 
 </beans>

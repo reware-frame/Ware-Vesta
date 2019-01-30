@@ -4,7 +4,7 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
 
-    <bean id="idService" class="com.robert.vesta.service.factory.IdServiceFactoryBean"
+    <bean id="idService" class="com.ten.ware.vesta.service.factory.IdServiceFactoryBean"
           init-method="init">
         <property name="providerType" value="DB"/>
 

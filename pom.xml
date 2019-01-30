@@ -4,9 +4,9 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.ten.frame</groupId>
-    <artifactId>idgeneratior</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <groupId>com.ten.ware</groupId>
+    <artifactId>vesta</artifactId>
+    <version>0.0.1</version>
     <packaging>pom</packaging>
 
     <name>vesta-id-generator</name>

@@ -4,12 +4,11 @@
         xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <groupId>com.robert.vesta</groupId>
-        <artifactId>vesta-id-generator</artifactId>
+        <groupId>com.ten.ware</groupId>
+        <artifactId>vesta</artifactId>
         <version>0.0.1</version>
     </parent>
 
-    <groupId>com.robert.vesta</groupId>
     <artifactId>vesta-server</artifactId>
     <version>0.0.1</version>
     <name>vesta-server</name>
@@ -27,9 +26,8 @@
         </dependency>
 
         <dependency>
-            <groupId>com.robert.vesta</groupId>
+            <groupId>com.ten.ware.vesta</groupId>
             <artifactId>vesta-service</artifactId>
-            <version>0.0.1</version>
         </dependency>
 
         <dependency>
@@ -72,7 +70,7 @@
                     <archive>
                         <manifest>
                             <addClasspath>true</addClasspath>
-                            <mainClass>com.robert.vesta.server.VestaServer</mainClass>
+                            <mainClass>com.ten.ware.vesta.server.VestaServer</mainClass>
                         </manifest>
                     </archive>
                 </configuration>

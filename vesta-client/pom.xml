@@ -4,12 +4,11 @@
         xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <groupId>com.robert.vesta</groupId>
-        <artifactId>vesta-id-generator</artifactId>
+        <groupId>com.ten.ware</groupId>
+        <artifactId>vesta</artifactId>
         <version>0.0.1</version>
     </parent>
 
-    <groupId>com.robert.vesta</groupId>
     <artifactId>vesta-client</artifactId>
     <version>0.0.1</version>
     <name>vesta-client</name>
@@ -41,15 +40,13 @@
         </dependency>
 
         <dependency>
-            <groupId>com.robert.vesta</groupId>
+            <groupId>com.ten.ware.vesta</groupId>
             <artifactId>vesta-intf</artifactId>
-            <version>0.0.1</version>
         </dependency>
 
         <dependency>
-            <groupId>com.robert.vesta</groupId>
+            <groupId>com.ten.ware.vesta</groupId>
             <artifactId>vesta-service</artifactId>
-            <version>0.0.1</version>
             <scope>test</scope>
         </dependency>
 
@@ -81,6 +78,12 @@
             <groupId>com.github.sgroschupf</groupId>
             <artifactId>zkclient</artifactId>
             <version>0.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.ten.ware</groupId>
+            <artifactId>vesta-intf</artifactId>
+            <version>0.0.1</version>
         </dependency>
     </dependencies>
 

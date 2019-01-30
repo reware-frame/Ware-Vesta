@@ -4,12 +4,12 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
 
-    <bean id="idService" class="com.robert.vesta.service.impl.MachineIdsIdServiceImpl"
+    <bean id="idService" class="com.ten.ware.vesta.service.impl.MachineIdsIdServiceImpl"
           init-method="init">
         <property name="machineIdProvider" ref="propertyMachineIdsProvider"/>
     </bean>
 
-    <bean id="propertyMachineIdsProvider" class="com.robert.vesta.service.impl.provider.PropertyMachineIdsProvider">
+    <bean id="propertyMachineIdsProvider" class="com.ten.ware.vesta.service.impl.provider.PropertyMachineIdsProvider">
         <property name="machineIds" value="1,2,3,4,5"/>
     </bean>
 
